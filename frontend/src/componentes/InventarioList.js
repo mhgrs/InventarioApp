@@ -49,7 +49,7 @@ function InventarioList() {
     if (lote.cantidad < stockBajo) {
       return 'table-info'; // Azul: stock bajo
     }
-    //sin color = sin existencias
+    
     return ''; 
   };
   
