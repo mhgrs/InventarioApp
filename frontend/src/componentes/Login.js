@@ -6,27 +6,30 @@ import './Login.css';
 function Login() {
   const nav = useNavigate();
   const [usuario, setUsuario] = useState('');
-  const [pass, setPass] = useState('');
+  const [pass, setpass] = useState('');
   const [error, setError] = useState('');
 
-  const handleSubmit = async (e) => {
+  const enviar = async (e) => {
     e.preventDefault();
     setError(''); 
 
     try {
-     
-      const response = await apiClient.post('/api-login/', {
+      const respuesta = await apiClient.post('/api-login/', { 
         username: usuario,
         password: pass
       });
 
-     
-      if (response.data.token) {
+      if (respuesta.data.token) {
       
-        localStorage.setItem('authToken', response.data.token);
+        localStorage.setItem('authToken', respuesta.data.token);
         
-      
-        nav('/');
+        localStorage.setItem('userInfo', JSON.stringify({
+          userId: respuesta.data.user_id,
+          username: respuesta.data.username,
+          isStaff: respuesta.data.is_staff 
+        }));
+
+        nav('/'); 
       }
     } catch (err) {
       
@@ -41,7 +44,7 @@ function Login() {
         <h2 className="mb-4 text-center fw-bold">Iniciar Sesión</h2>
         <p className="text-center text-muted mb-4">Gestión de Inventario</p>
         
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={enviar}>
           <div className="mb-3">
             <label htmlFor="usuario" className="form-label">Usuario</label>
             <input
@@ -54,13 +57,13 @@ function Login() {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="pass" className="form-label">Contraseña</label>
+            <label htmlFor="password" className="form-label">Contraseña</label>
             <input
               type="password"
               className="form-control"
-              id="pass"
+              id="password"
               value={pass}
-              onChange={(e) => setPass(e.target.value)}
+              onChange={(e) => setpass(e.target.value)}
               required
             />
           </div>
