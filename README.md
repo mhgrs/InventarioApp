@@ -15,7 +15,7 @@ Para iniciar el backend:
 
 - python -m venv venv
 - venv/Scripts/actívate
-- python install -r requirements.txt
+- pip install django djangorestframework psycopg2-binary django-cors-headers
 - python manage.py migrate
 - python manage.py runserver
 
