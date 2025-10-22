@@ -56,7 +56,7 @@ function EgresoForm() {
       return;
     }
     try {
-      // 7. Usamos el clienteApi con la URL relativa
+      
       await apiClient.patch(`/api/inventario/${loteEncontrado.sku}/`, { cantidad: nuevaCantidad });
       nav('/inventario');
     } catch (error) {
