@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import LoteDeStock
 
-# Serializer para CREAR (usará todos los campos del modelo)
+
 class LoteDeStockCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = LoteDeStock
