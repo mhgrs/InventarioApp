@@ -15,7 +15,7 @@ Para iniciar el backend:
 
 - python -m venv venv
 - venv/Scripts/actívate
-- python install -r requirements.txt
+- pip install django djangorestframework psycopg2-binary django-cors-headers
 - python manage.py migrate
 - python manage.py runserver
 
@@ -27,6 +27,11 @@ Para iniciar el frontend:
 
 Se abre automaticamente, de no ser asi, puedes acceder por http://localhost:3000/.
 
-usuarios:
-- admin : admin123
-- usuario : user1234
+
+*** ACTUALIZACION *** 19:21 22-10-2025
+
+D
+Para crear el usuario administrador es necesario usar " python manage.py createsuperuser " desde la consola que te posiciona en el 
+backend, puedes usar "admin" como usuario y contraseña a elección, email no es obligatorio.
+
+Para crear más usuarios puedes usar el panel de administración de Django: http://127.0.0.1:8000/admin/
