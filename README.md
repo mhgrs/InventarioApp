@@ -24,3 +24,9 @@ Para iniciar el frontend:
 
 - npm install
 - npm start
+
+Se abre automaticamente, de no ser asi, puedes acceder por http://localhost:3000/.
+
+usuarios:
+- admin : admin123
+- usuario : user1234
