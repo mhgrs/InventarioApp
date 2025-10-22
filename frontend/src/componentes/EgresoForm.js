@@ -90,7 +90,7 @@ function EgresoForm() {
                   type="text"
                   className="form-control"
                   id="skuProducto"
-                  placeholder="Ej: 1 (Para SKU-1)"
+                  placeholder="Ej: 1 "
                   value={sku}
                   onChange={(e) => {
                     setSku(e.target.value);
